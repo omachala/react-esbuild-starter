@@ -21,4 +21,5 @@ yarn upgrade-interactive
 yarn install
 rm -rf .git
 git init
+yarn start
 ```
