@@ -1,4 +1,5 @@
 const { ESBuildMinifyPlugin } = require("esbuild-loader");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { resolve, join } = require("path");
 
 const target = "es2015";
@@ -17,6 +18,11 @@ module.exports = {
     compress: true,
     port: 4000,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+    }),
+  ],
   module: {
     rules: [
       {
