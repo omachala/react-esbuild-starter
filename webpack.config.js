@@ -1,8 +1,9 @@
 const { ESBuildMinifyPlugin } = require("esbuild-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { resolve, join } = require("path");
+const { resolve } = require("path");
 
 const target = "es2015";
+const outputPath = resolve(__dirname, "build") 
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -10,11 +11,11 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    path: resolve(__dirname, "build"),
+    path: outputPath,
     filename: "bundle.js",
   },
   devServer: {
-    static: join(__dirname, "build"),
+    static: outputPath,
     compress: true,
     port: 4000,
   },
